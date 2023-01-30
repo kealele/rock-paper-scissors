@@ -1,7 +1,7 @@
 let input = prompt();
 const playerSelection = input.toLowerCase();
 let weapons = ["rock", "paper", "scissors"];
-let computerSelection = getComputerChoise();
+const computerSelection = getComputerChoise();
 
 function getComputerChoise() {
     let random = Math.floor(Math.random() * weapons.length);
