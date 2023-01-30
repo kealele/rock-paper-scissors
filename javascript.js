@@ -1,7 +1,7 @@
 let input = prompt();
 const playerSelection = input.toLowerCase();
 let weapons = ["rock", "paper", "scissors"];
-const computerSelection = getComputerChoise();
+let computerSelection = getComputerChoise();
 
 function getComputerChoise() {
     let random = Math.floor(Math.random() * weapons.length);
@@ -9,47 +9,46 @@ function getComputerChoise() {
 }
 
 function playRound (playerSelection, computerSelection) {
+    
     if (playerSelection == "rock") {
         if (computerSelection == "paper"){
-            return("You Lose! Paper beats Rock.");
+            return console.log("You Lose! Paper beats Rock.");
         }
         else if (computerSelection == "scissors"){
-            return("You win! Rock beats scissors.");
+            return console.log("You win! Rock beats scissors.");
         }
         else if (computerSelection == "rock") {
-           return("Draw.");
+           return console.log("Draw.");
         }
-        else {
-            return ("Choose the correct weapon!")
-        }
-    }
+
+    } 
+    
     if (playerSelection == "paper") {
         if (computerSelection == "scissors"){
-            return("You Lose! Scissors beats Paper.");
+            return console.log("You Lose! Scissors beats Paper.");
         }
         else if (computerSelection == "rock"){  
-            return("You win! Paper beats rock.");
+            return console.log("You win! Paper beats rock.");
         }
         else if (computerSelection == "paper") {
-           return("Draw.");
+           return console.log("Draw.");
         }
-        else {
-            return ("Choose the correct weapon!")
-        }
+
     } 
     if (playerSelection == "scissors") {
         if (computerSelection == "rock"){
-            return("You Lose! Rock beats Scissors.");
+            return console.log("You Lose! Rock beats Scissors.");
         }
         else if (computerSelection == "paper"){
-            return("You win! Scissors beats Paper.");
+            return console.log("You win! Scissors beats Paper.");
         }
         else if (computerSelection == "scissors") {
-           return("Draw.");
+           return console.log("Draw.");
         }
-        else {
-            return ("Choose the correct weapon!")
-        }
-    }  
+
+    }  else {
+        return console.log("Choose the correct weapon!")
+    }
 }
+
 
