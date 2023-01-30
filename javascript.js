@@ -1,4 +1,5 @@
-const playerSelection = "rock";
+let input = prompt();
+const playerSelection = input.toLowerCase();
 let weapons = ["rock", "paper", "scissors"];
 const computerSelection = getComputerChoise();
 
@@ -6,8 +7,6 @@ function getComputerChoise() {
     let random = Math.floor(Math.random() * weapons.length);
     return weapons[random];
 }
-
-getComputerChoise();
 
 function playRound (playerSelection, computerSelection) {
     if (playerSelection == "rock") {
@@ -44,3 +43,4 @@ function playRound (playerSelection, computerSelection) {
         }
     }  
 }
+
