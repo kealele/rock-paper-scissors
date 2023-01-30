@@ -16,8 +16,11 @@ function playRound (playerSelection, computerSelection) {
         else if (computerSelection == "scissors"){
             return("You win! Rock beats scissors.");
         }
-        else {
+        else if (computerSelection == "rock") {
            return("Draw.");
+        }
+        else {
+            return ("Choose the correct weapon!")
         }
     }
     if (playerSelection == "paper") {
@@ -27,8 +30,11 @@ function playRound (playerSelection, computerSelection) {
         else if (computerSelection == "rock"){  
             return("You win! Paper beats rock.");
         }
-        else {
+        else if (computerSelection == "paper") {
            return("Draw.");
+        }
+        else {
+            return ("Choose the correct weapon!")
         }
     } 
     if (playerSelection == "scissors") {
@@ -38,8 +44,11 @@ function playRound (playerSelection, computerSelection) {
         else if (computerSelection == "paper"){
             return("You win! Scissors beats Paper.");
         }
-        else {
+        else if (computerSelection == "scissors") {
            return("Draw.");
+        }
+        else {
+            return ("Choose the correct weapon!")
         }
     }  
 }
