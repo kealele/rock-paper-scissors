@@ -1,12 +1,3 @@
-let input = prompt();
-const playerSelection = input.toLowerCase();
-let weapons = ["rock", "paper", "scissors"];
-const computerSelection = getComputerChoise();
-
-function getComputerChoise() {
-    let random = Math.floor(Math.random() * weapons.length);
-    return weapons[random];
-}
 
 function playRound (playerSelection, computerSelection) {
     
@@ -52,3 +43,16 @@ function playRound (playerSelection, computerSelection) {
 }
 
 
+function game(){
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Choose your weapon!").toLowerCase();
+        let weapons = ["rock", "paper", "scissors"];
+        let computerSelection = getComputerChoise();
+        
+        function getComputerChoise() {
+            let random = Math.floor(Math.random() * weapons.length);
+            return weapons[random];
+        }
+        playRound (playerSelection, computerSelection)
+     }
+}
