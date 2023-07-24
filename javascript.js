@@ -107,16 +107,23 @@ function game(){
     playRound (playerSelection, computerSelection)
     scoretable.textContent = `Player (${playerScore}) - Computer (${computerScore})`;
 
-    if (playerScore == 5){
-        content.textContent = " You won this battle";
-        content.setAttribute('style', 'visibility: visible; color: rgb(35, 35, 35); background-color: green');
+    if (playerScore == 5 && computerScore == 5){
+        content.textContent = "Draw";
+        content.setAttribute('style', 'visibility: visible; color: rgb(35, 35, 35); background-color: white');
         rockbutton.setAttribute('disabled', 'true');
         paperbutton.setAttribute('disabled', 'true');
         scissorsbutton.setAttribute('disabled', 'true');
     }
-    if (computerScore == 5){
+    else if (computerScore == 5){
         content.textContent = " You lost this battle";
         content.setAttribute('style', 'visibility: visible; color: rgb(35, 35, 35); background-color: red');
+        rockbutton.setAttribute('disabled', 'true');
+        paperbutton.setAttribute('disabled', 'true');
+        scissorsbutton.setAttribute('disabled', 'true');
+    }
+    else if (playerScore == 5){
+        content.textContent = "You won this battle";
+        content.setAttribute('style', 'visibility: visible; color: rgb(35, 35, 35); background-color: green');
         rockbutton.setAttribute('disabled', 'true');
         paperbutton.setAttribute('disabled', 'true');
         scissorsbutton.setAttribute('disabled', 'true');
