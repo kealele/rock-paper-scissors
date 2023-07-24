@@ -3,7 +3,7 @@ let computerScore = 0;
 let score = 1;
 function playerWin(){
     playerScore += score;
-    return playerScore
+    return playerScore;
 }
 
 function computerWin(){
@@ -57,9 +57,9 @@ function playRound (playerSelection, computerSelection) {
             playerWin();
             computerWin();
             content.textContent = "Draw.";
-        }
+        };
 
-    } 
+    };
     
     if (playerSelection == "paper") {
         if (computerSelection == "scissors"){
@@ -74,9 +74,9 @@ function playRound (playerSelection, computerSelection) {
             playerWin();
             computerWin();
            content.textContent = "Draw.";
-        }
+        };
 
-    } 
+    }; 
     if (playerSelection == "scissors") {
         if (computerSelection == "rock"){
             computerWin();
@@ -90,11 +90,10 @@ function playRound (playerSelection, computerSelection) {
             playerWin();
             computerWin();
            content.textContent = "Draw.";
-        }
+        };
 
-    } 
-}
-
+    };
+};
 
 
 function game(){  
@@ -107,4 +106,19 @@ function game(){
     }
     playRound (playerSelection, computerSelection)
     scoretable.textContent = `Player (${playerScore}) - Computer (${computerScore})`;
-}
+
+    if (playerScore == 5){
+        content.textContent = " You won this battle";
+        content.setAttribute('style', 'visibility: visible; color: rgb(35, 35, 35); background-color: green');
+        rockbutton.setAttribute('disabled', 'true');
+        paperbutton.setAttribute('disabled', 'true');
+        scissorsbutton.setAttribute('disabled', 'true');
+    }
+    if (computerScore == 5){
+        content.textContent = " You lost this battle";
+        content.setAttribute('style', 'visibility: visible; color: rgb(35, 35, 35); background-color: red');
+        rockbutton.setAttribute('disabled', 'true');
+        paperbutton.setAttribute('disabled', 'true');
+        scissorsbutton.setAttribute('disabled', 'true');
+    }
+};
