@@ -8,14 +8,14 @@ body {
     display: flex;
     justify-content: center;
     gap: 200px;
-    margin-top: 400px;
+    margin-top: 160px;
 }
 
 .title {
     font-size: 64px;
     font-weight: 900;
     color: rgb(255, 211, 15);
-    margin-top: 64px;
+    margin-top: 30px;
 }
 
 button {
@@ -49,4 +49,20 @@ svg {
 
 button:hover svg {
     fill:   rgb(35, 35, 35) !important;
+}
+
+
+.content {
+    font-size: 50px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    margin-top: 130px;
+    visibility: hidden;
+}
+
+.scoretable {
+    font-size: 50px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    margin-top: 130px;
 }

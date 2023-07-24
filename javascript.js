@@ -11,74 +11,100 @@ function computerWin(){
     return computerScore;
 }
 
+const rockbutton = document.querySelector('#rock');
+const paperbutton = document.querySelector('#paper');
+const scissorsbutton = document.querySelector('#scissors');
+
+rockbutton.addEventListener('click', () => {
+    playerSelection = 'rock';
+    game();
+});
+
+paperbutton.addEventListener('click', () => {
+    playerSelection = 'paper';
+    game();
+});
+
+scissorsbutton.addEventListener('click', () => {
+    playerSelection = 'scissors';
+    game();
+});
+
+const result = document.querySelector("#result");
+const content = document.createElement('div');
+content.classList.add('content');
+content.textContent = 'result(hidden lol)'; // hidden result (because didn't know how to do static element with flexbox)
+result.appendChild(content);
+
+const runningscore = document.querySelector("#score");
+const scoretable = document.createElement("div");
+scoretable.classList.add('scoretable');
+scoretable.textContent = `Player (0) - Computer (0)`;
+runningscore.appendChild(scoretable);
+
 function playRound (playerSelection, computerSelection) {
-    
+    content.setAttribute('style', 'visibility: visible')
     if (playerSelection == "rock") {
         if (computerSelection == "paper"){
-            computerWin()
-            return console.log("You Lose this round! Paper beats Rock.");
+            computerWin();
+            content.textContent = "You Lose this round! Paper beats Rock.";
         }
         else if (computerSelection == "scissors"){
-            playerWin()
-            return console.log("You win this round! Rock beats scissors.");
+            playerWin();
+            content.textContent = "You win this round! Rock beats scissors.";
         }
         else if (computerSelection == "rock") {
-           return console.log("Draw.");
+            playerWin();
+            computerWin();
+            content.textContent = "Draw.";
         }
 
     } 
     
     if (playerSelection == "paper") {
         if (computerSelection == "scissors"){
-            computerWin()
-            return console.log("You Lose this round! Scissors beats Paper.");
+            computerWin();
+            content.textContent = "You Lose this round! Scissors beats Paper.";
         }
         else if (computerSelection == "rock"){
-            playerWin()  
-            return console.log("You win this round! Paper beats rock.");
+            playerWin();  
+            content.textContent = "You win this round! Paper beats rock.";
         }
         else if (computerSelection == "paper") {
-           return console.log("Draw.");
+            playerWin();
+            computerWin();
+           content.textContent = "Draw.";
         }
 
     } 
     if (playerSelection == "scissors") {
         if (computerSelection == "rock"){
-            computerWin()
-            return console.log("You Lose this round! Rock beats Scissors.");
+            computerWin();
+            content.textContent = "You Lose this round! Rock beats Scissors.";
         }
         else if (computerSelection == "paper"){
-            playerWin()
-            return console.log("You win this round! Scissors beats Paper.");
+            playerWin();
+            content.textContent = "You win this round! Scissors beats Paper.";
         }
         else if (computerSelection == "scissors") {
-           return console.log("Draw.");
+            playerWin();
+            computerWin();
+           content.textContent = "Draw.";
         }
 
-    }  else {
-        return console.log("Choose the correct weapon!")
-    }
+    } 
 }
 
 
-function game(){
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Choose your weapon!").toLowerCase();
-        let weapons = ["rock", "paper", "scissors"];
-        let computerSelection = getComputerChoise();
+
+function game(){  
+    let weapons = ["rock", "paper", "scissors"];
+    let computerSelection = getComputerChoise();
         
-        function getComputerChoise() {
-            let random = Math.floor(Math.random() * weapons.length);
-            return weapons[random];
-        }
-        playRound (playerSelection, computerSelection)
-     }
-     console.log("-------------------------------------------------------------------------------------------------------")
-     if (playerWin() > computerWin()){
-        return console.log("You won this battle!" )
-     } else if (computerWin() > playerWin ()){
-        return console.log("You lost this battle!" )
-     } else {
-        return console.log ("Draw.")
-     }
+    function getComputerChoise() {
+        let random = Math.floor(Math.random() * weapons.length);
+        return weapons[random];
+    }
+    playRound (playerSelection, computerSelection)
+    scoretable.textContent = `Player (${playerScore}) - Computer (${computerScore})`;
 }
